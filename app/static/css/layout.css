@@ -39,7 +39,7 @@ body {
 }
 .content.active {
     display: block;
-    background-color: #4D4D4D 
+    background-color: #4D4D4D;
 }
 
 /*estilos del navbar */
@@ -118,6 +118,8 @@ body {
     width: auto; /* Mantén la proporción del logotipo */
 }
 
+/* ---------------Pestana INICIO -------------------*/
+
 /* Contenedor del carrusel */
 .logo {
     height: 150px; /* Ajusta el tamaño del logotipo */
@@ -177,37 +179,228 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Sección "Nosotros" */
-.about-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    gap: 20px;
-    background-color: #f9f9f9;
-}
 
-.about-image {
-    width: 30%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+.crypto-info-section {
+            padding: 40px 20px;
+            margin: 40px auto;
+            max-width: 1200px;
+            background-color: #4D4D4D ;
+            border-radius: 15px;
+            text-align: center;
+            
+        }
 
-.about-content {
-    max-width: 40%;
-    text-align: left;
-}
+        .crypto-info-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-family: 'Merriweather', serif;
+            color: #F4C542;
+        }
 
-.about-content h2 {
-    font-size: 40px;
-    margin-bottom: 10px;
-    color: #333;
-}
+        .crypto-info-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            text-align: left;
+            color: white;
+            text-align: justify;
+            font-size: 30px;
+        }
 
-.about-content p {
-    font-size: 30px;
-    text-align: justify;
-    line-height: 1.6;
-    color: #555;
-}
+        .crypto-info-content img {
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+/* ---------------Pestana NOSOTROS -------------------*/
+       .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 1200px;
+            background-color: #26A17B;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px #F4C542;
+        }
+        .vision-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 1200px;
+            background-color: #F4C542;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px #26A17B;
+        }
+
+        .about-image {
+            width: 40%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .about-content {
+            width: 55%;
+        }
+
+        .about-content h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5em;
+            border-bottom: 2px solid white ;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #1E1E1E ;
+        }
+
+        .about-content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #1E1E1E ;
+        }
+
+/* ---------------Pestana GUIA Y BLOG -------------------*/
+.accordion-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .content h1{
+            text-align: center;
+            font-family: 'Merriweather', serif;
+            font-size: 2.5em;
+            color: #F4C542;
+        }
+
+        .accordion {
+            background-color: #26A17B;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2em;
+            transition: 0.4s;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .accordion.active, .accordion:hover {
+            background-color: #F4C542;
+        }
+
+        .accordion:after {
+            content: '+'; /* Símbolo de más */
+            font-size: 20px;
+            color: #fff;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .accordion.active:after {
+            content: "-"; /* Símbolo de menos */
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .panel p {
+            padding: 15px 0;
+        }
+
+        /* --- ESTILOS PARA EL BLOG --- */
+        .blog-videos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .video-block {
+            background-color: #1E1E1E;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 15px #F4C542 ;
+            transition: transform 0.3s;
+        }
+
+        .video-block:hover {
+            transform: translateY(-10px);
+        }
+
+        .video-block img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
+
+        .video-block p {
+            padding: 15px;
+            color: #fff;
+            font-size: 1.1em;
+        }
+/* ---------------ESTILOS PARA EL FOOTER -------------------*/
+        .footer {
+            background-color: #111;
+            color: #aaa;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 20px;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            font-family: 'Merriweather', serif;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p {
+            margin: 5px 0;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }

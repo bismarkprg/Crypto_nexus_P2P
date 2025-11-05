@@ -21,7 +21,8 @@
         <div class="actions">
             <button id="btn-register" class="action-btn btn-register" onclick="window.location.href='{{ url_for('register') }}'">Registrarse</button>
             <button id="btn-login" class="action-btn btn-login" onclick="window.location.href='{{ url_for('login') }}'">Iniciar Sesión</button>
-            <a href="#" class="action-btn"><img src="{{ url_for('static', filename='images/icon/lang.png') }}" alt="Img language" class="btn-language"></a>
+            <a class="action-btn" id="btn-language"><img src="{{ url_for('static', filename='images/icon/lang.png') }}" alt="Img language" class="btn-language"></a>
+
             <a href="#" class="action-btn"><img src="{{ url_for('static', filename='images/icon/brightness.png') }}" alt="Img bright" class="btn-bright"></a>
         
         </div>
@@ -44,43 +45,37 @@
             <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
             <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
         </div>   
-        <div class="about-content">
-                <h2>Sobre Nosotros</h2>
+        <div class="crypto-info-section">
+            <h2>¿Qué son las Criptomonedas?</h2>
+            <div class="crypto-info-content">
+                <img src="{{ url_for('static', filename='images/image5.png') }}" alt="Imagen Criptomonedas">
                 <p>
-                    Somos una plataforma dedicada a facilitar el intercambio de criptomonedas de manera segura y eficiente. 
-                    Nuestro objetivo es proporcionar a nuestros usuarios las herramientas necesarias para operar en el mercado 
-                    de criptomonedas con confianza.
+                    Las criptomonedas son monedas digitales o virtuales que utilizan criptografía para asegurar las transacciones y controlar la creación de nuevas unidades. A diferencia de las monedas tradicionales (como el dólar o el euro), no están controladas por ninguna autoridad central, como un banco. Esto las hace descentralizadas. La tecnología que está detrás de la mayoría de las criptomonedas se llama blockchain (cadena de bloques), que es un registro público y distribuido de todas las transacciones.
                 </p>
             </div>
-            <div class="about-content">
-                <h2>Sobre Nosotros</h2>
+        </div>
+        <div class="crypto-info-section">
+            <h2>Uso de criptomonedas alivia demanda de dólares y abre nuevas posibilidades</h2>
+            <div class="crypto-info-content">
+                
                 <p>
-                    Somos una plataforma dedicada a facilitar el intercambio de criptomonedas de manera segura y eficiente. 
-                    Nuestro objetivo es proporcionar a nuestros usuarios las herramientas necesarias para operar en el mercado 
-                    de criptomonedas con confianza.
+                    Bolivia ha dado un paso significativo al permitir el uso de
+                    criptomonedas a través de las entidades financieras, un
+                    fenómeno que ya es común en muchos países del mundo. Esta
+                    medida, según economistas y empresarios, es una respuesta a la
+                    crítica escasez de dólares y promete aliviar la demanda de la
+                    divisa estadounidense, además de generar nuevas
+                    oportunidades laborales y alternativas de ahorro y refugio de
+                    valor.
                 </p>
+                <img src="{{ url_for('static', filename='images/image6.png') }}" alt="Imagen Criptomonedas">
             </div>
-            <div class="about-content">
-                <h2>Sobre Nosotros</h2>
-                <p>
-                    Somos una plataforma dedicada a facilitar el intercambio de criptomonedas de manera segura y eficiente. 
-                    Nuestro objetivo es proporcionar a nuestros usuarios las herramientas necesarias para operar en el mercado 
-                    de criptomonedas con confianza.
-                </p>
-            </div>
-            <div class="about-content">
-                <h2>Sobre Nosotros</h2>
-                <p>
-                    Somos una plataforma dedicada a facilitar el intercambio de criptomonedas de manera segura y eficiente. 
-                    Nuestro objetivo es proporcionar a nuestros usuarios las herramientas necesarias para operar en el mercado 
-                    de criptomonedas con confianza.
-                </p>
-            </div> 
+        </div>
     </div>
 
     <div id="nosotros" class="content">
         <div class="about-section">
-            <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="Imagen de Nosotros" class="about-image">
+            <img src="{{ url_for('static', filename='images/about.png') }}" alt="Imagen de Nosotros" class="about-image">
             <div class="about-content">
                 <h2>Sobre Nosotros</h2>
                 <p>
@@ -90,7 +85,7 @@
                 </p>
             </div>
         </div>
-        <div class="about-section">
+        <div class="vision-section">
             <div class="about-content">
                 <h2>Nuestra vision</h2>
                 <p>
@@ -99,18 +94,119 @@
                     en un entorno confiable y accesible para todos.
                 </p>
             </div>
-            <img src="{{ url_for('static', filename='images/vision.jpg') }}" alt="Imagen de Nosotros" class="about-image">
+            <img src="{{ url_for('static', filename='images/vision.png') }}" alt="Imagen de Nosotros" class="about-image">
         </div>
     </div>
     <div id="guia" class="content">
-        <h1>GUÍA de Uso</h1>
-        <p>Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu.</p>
+        <h1>Guia de uso y preguntas frecuentes</h1>
+        <div class="accordion-container">
+            <button class="accordion">¿Cómo me registro?</button>
+            <div class="panel">
+                <p>Para registrarte, haz clic en el botón "Registrarse" en la esquina superior derecha. Se te pedirá que proporciones un correo electrónico y crees una contraseña segura. Una vez completado, recibirás un correo de verificación para activar tu cuenta.</p>
+            </div>
+
+            <button class="accordion">¿Qué datos debo proporcionar a la plataforma?</button>
+            <div class="panel">
+                <p>Para cumplir con las regulaciones y garantizar la seguridad, solicitamos una verificación de identidad (KYC). Esto incluye tu nombre completo, fecha de nacimiento, dirección y una foto de tu documento de identidad (DNI, pasaporte, etc.).</p>
+            </div>
+
+            <button class="accordion">¿Cómo funciona el P2P?</button>
+            <div class="panel">
+                <p>El intercambio Peer-to-Peer (P2P) te permite comprar y vender criptomonedas directamente con otros usuarios. Nuestra plataforma actúa como un intermediario seguro, reteniendo la criptomoneda en un depósito de garantía (escrow) hasta que el pago sea confirmado por ambas partes.</p>
+            </div>
+            
+            <button class="accordion">¿Por qué debo poner mis datos auténticos?</button>
+            <div class="panel">
+                <p>Usar tus datos auténticos es crucial para la seguridad de tu cuenta y para prevenir fraudes. Nos permite verificar tu identidad, proteger tus fondos y cumplir con las leyes contra el lavado de dinero. Tus datos son tratados de forma confidencial.</p>
+            </div>
+
+            <button class="accordion">¿Cómo evitar estafas?</button>
+            <div class="panel">
+                <p>Nunca compartas tu contraseña. Verifica siempre la reputación del otro usuario. No liberes las criptomonedas del depósito de garantía hasta que hayas confirmado la recepción del pago en tu cuenta bancaria o billetera. Comunícate únicamente a través del chat de nuestra plataforma.</p>
+            </div>
+
+            <button class="accordion">Comisiones</button>
+            <div class="panel">
+                <p>Cobramos una pequeña comisión por cada transacción completada en la plataforma. Las comisiones varían según el tipo de operación y se muestran de forma transparente antes de que confirmes la transacción. No hay costos ocultos.</p>
+            </div>
+
+            <button class="accordion">Medios de pago</button>
+            <div class="panel">
+                <p>Aceptamos una amplia variedad de medios de pago, incluyendo transferencias bancarias, billeteras móviles, y otros métodos populares en tu región. Puedes configurar tus métodos de pago preferidos en la configuración de tu cuenta.</p>
+            </div>
+        </div>
     </div>
     <div id="blog" class="content">
-        <h1>Últimas Publicaciones en el BLOG</h1>
-        <p>Fusce ac felis sit amet ligula pharetra condimentum. Maecenas vestibulum mollis diam. Pellentesque ut neque.</p>
-    </div>
+        <h1>Videos Informativos</h1>
+        <div class="blog-videos">
+            <a href="https://www.youtube.com/watch?v=dsTDTa1aP7M&t=3s" target="_blank" class="video-block">
+                <img src="{{ url_for('static', filename='images/yt1.png') }}" alt="Miniatura Video 1">
+                <p>Qué es BITCOIN y Cómo FUNCIONA para PRINCIPIANTES</p>
+            </a>
+            <a href="https://www.youtube.com/watch?v=bVZGmjbOKRw" target="_blank" class="video-block">
+                <img src="{{ url_for('static', filename='images/yt2.png') }}" alt="Miniatura Video 2">
+                <p>Stablecoins: ¿Qué son y cuál es su función?</p>
+            </a>
+            <a href="https://www.youtube.com/watch?v=Ap-RDyUlAuk" target="_blank" class="video-block">
+                <img src="{{ url_for('static', filename='images/yt3.png') }}" alt="Miniatura Video 3">
+                <p>Ahorrar en Criptomonedas 🤔 ¿Buena o Mala Opcion?</p>
+            </a>
+        </div>
+        <h1>Noticias en Bolivia</h1>
+        <div class="blog-videos">
+            <a href="https://www.youtube.com/watch?v=EmXApvzn27Q" target="_blank" class="video-block">
+                <img src="{{ url_for('static', filename='images/yt4.png') }}" alt="Miniatura Video 4">
+                <p>Noticias: CRIPTOMONEDAS YA SON LEGALES EN BOLIVIA</p>
+            </a>
+            <a href="https://www.youtube.com/watch?v=O1Lg_hk4u_s" target="_blank" class="video-block">
+                <img src="{{ url_for('static', filename='images/yt5.png') }}" alt="Miniatura Video 5">
+                <p>RTP: Se oficializa el uso de "Criptomonedas" en Bolivia</p>
+            </a>
+            <a href="https://www.youtube.com/watch?v=LQvnTmVdIy4&t=1s" target="_blank" class="video-block">
+                <img src="{{ url_for('static', filename='images/yt6.png') }}" alt="Miniatura Video 6">
+                <p>Por qué América Latina se está volviendo una potencia cripto</p>
+            </a>
+        </div>
+        <div class="accordion-container">
+            <button class="accordion">Criptomonedas en Bolivia</button>
+            <div class="panel">
+                <p>El uso de criptomonedas en Bolivia ha crecido, aunque existen regulaciones específicas del Banco Central de Bolivia que los usuarios deben conocer. La comunidad utiliza principalmente intercambios P2P para operar.</p>
+            </div>
 
+            <button class="accordion">Riesgos de comprar criptomonedas</button>
+            <div class="panel">
+                <p>El principal riesgo es la volatilidad: los precios pueden cambiar drásticamente en poco tiempo. Otros riesgos incluyen la posibilidad de estafas (phishing), la seguridad de las billeteras digitales y la incertidumbre regulatoria en algunos países.</p>
+            </div>
+
+            <button class="accordion">¿Cómo funciona la blockchain?</button>
+            <div class="panel">
+                <p>La blockchain o "cadena de bloques" es un libro de contabilidad digital, inmutable y descentralizado. Cada "bloque" contiene un conjunto de transacciones. Cada nuevo bloque se enlaza criptográficamente al anterior, creando una cadena segura y transparente que es verificada por una red de computadoras.</p>
+            </div>
+        </div> 
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Correo: bismark.mariaca.59066@usalesiana.edu.bo</p>
+                <p>Teléfono: +1 (591) 752-92259</p>
+            </div>
+            <div class="footer-section">
+                <h3>Dirección</h3>
+                <p>Av. Chacaltaya Nro.1258, Zona Achachicala. Casilla de Correo: 13102</p>
+                <p>La Paz, Bolivia</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#" title="Facebook"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
+                    <a href="#" title="Whatsapp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Whatsapp"></a>
+                    <a href="#" title="Instagram"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
+                    <a href="#" title="Telegram"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="{{url_for('static', filename='js/layout.js')}}"></script>
 </body>
 </html>

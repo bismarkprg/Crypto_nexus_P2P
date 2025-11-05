@@ -17,7 +17,9 @@ mysql = MySQL(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    if "username" in session:
+        return redirect(url_for("dashboard"))
+    return render_template("index.html")
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -93,7 +95,7 @@ def register_form():
         user = cur.fetchone()
         cur.close()
 
-        return redirect(url_for('dashboard', nombre=user[0]))
+        return redirect(url_for('login', nombre=user[0]))
 
     # Obtener datos del usuario para mostrar el nombre
     user_id = session.get('user_id')
@@ -116,16 +118,24 @@ def login():
 
         if user and check_password_hash(user[2], password):
             session['user_id'] = user[0]
-            return redirect(url_for('dashboard', nombre=user[1]))
+            return redirect(url_for("dashboard"))
         else:
             flash('Nombre de usuario o contraseña incorrectos', 'danger')
             return redirect(url_for('login'))
     return render_template('login.html')
 
 
-@app.route('/dashboard/<nombre>')
-def dashboard(nombre):
+@app.route('/dashboard')
+def dashboard():
+    if "user_id" not in session:
+        return redirect(url_for("login"))
+    nombre = session["user_id"]
     return render_template('dashboard.html', nombre=nombre)
+
+@app.route("/logout")
+def logout():
+    session.pop("username", None)
+    return redirect(url_for("/"))
 
 if __name__ == '__main__':
     app.run(debug=True)
